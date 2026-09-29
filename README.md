@@ -23,7 +23,7 @@ src/
   components/  piezas reutilizables (Header, ProductCard, ...)
   context/     estado global (sesión, carrito, ...)
   pages/       una pantalla por archivo
-  types/       tipos que reflejan los DTOs del back
+  dto/       tipos que reflejan los DTOs del back
   utils/       funciones de ayuda
   index.css    estilos del prototipo de Figma + colores de marca para Tailwind
 ```
