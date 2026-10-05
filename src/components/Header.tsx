@@ -2,6 +2,7 @@
 // Más adelante, cuando exista el login, va a mostrar el usuario en lugar de "Ingresar / Crear cuenta".
 
 import { useState, type FormEvent } from "react";
+import { Link } from "react-router-dom";
 import Icon from "./Icon";
 
 export default function Header() {
@@ -17,14 +18,14 @@ export default function Header() {
   return (
     <header>
       <div className="topbar">
-        <a className="logo no-underline" href="/">
+        <Link className="logo no-underline" to="/">
           <span className="logo-mark">
             <span />
             <span />
             <span />
           </span>
           Campus<span>Tech</span>
-        </a>
+        </Link>
 
         <form className="search" onSubmit={handleBuscar} role="search">
           <Icon name="search" />
