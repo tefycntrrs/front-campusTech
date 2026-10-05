@@ -3,6 +3,7 @@
 // los productos y las categorías se piden al back cuando la pantalla aparece.
 
 import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Icon from "../components/Icon";
 import ProductCard from "../components/ProductCard";
 import SectionTitle from "../components/SectionTitle";
@@ -32,6 +33,8 @@ const HERO_IMAGE = "https://images.unsplash.com/photo-1627691673558-cf76f304f273
 const PROMO_IMAGE = "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=900";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   // Estado de la pantalla: los datos que llegan del back y cómo va la carga.
   const [productos, setProductos] = useState<Producto[]>([]);
   const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -69,9 +72,9 @@ export default function Home() {
             Encontrá todo lo que necesitás para estudiar, crear y jugar. Envíos a todo el
             país.
           </p>
-          <button className="btn btn-primary">
+          <Link className="btn btn-primary" to="/productos">
             Ver productos <Icon name="arrow" size={17} />
-          </button>
+          </Link>
           <div className="hero-dots">
             <span className="active" />
             <span />
@@ -123,7 +126,10 @@ export default function Home() {
             ) : (
               <div className="categories">
                 {categorias.map((categoria) => (
-                  <button key={categoria.categoriaId}>
+                  <button
+                    key={categoria.categoriaId}
+                    onClick={() => navigate(`/productos?categoria=${categoria.categoriaId}`)}
+                  >
                     <span>{categorySymbols[categoria.nombre] ?? "◇"}</span>
                     {categoria.nombre}
                   </button>
