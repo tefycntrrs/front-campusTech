@@ -39,6 +39,19 @@ const paths: Record<string, ReactNode> = {
       <path d="M3 7v10l9 4 9-4V7M12 11v10" />
     </>
   ),
+  close: <path d="M6 6l12 12M18 6 6 18" />,
+  lock: (
+    <>
+      <rect x="5" y="11" width="14" height="10" rx="2" />
+      <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+    </>
+  ),
+  user: (
+    <>
+      <circle cx="12" cy="8" r="4" />
+      <path d="M4 21a8 8 0 0 1 16 0" />
+    </>
+  ),
 };
 
 type IconProps = {
