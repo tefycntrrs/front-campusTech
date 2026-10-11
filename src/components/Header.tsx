@@ -3,16 +3,19 @@
 // - Con sesión: avatar con iniciales, "Hola, nombre" y un menú con las secciones de la cuenta.
 
 import { startTransition, useEffect, useRef, useState, type FormEvent } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import Icon from "./Icon";
 
 export default function Header() {
   const { usuario, logout } = useAuth();
   const navigate = useNavigate();
+  // useSearchParams lee la query de la URL actual (ej: /productos?q=notebook → "notebook").
+  const [searchParams] = useSearchParams();
+  const qEnUrl = searchParams.get("q") ?? "";
 
   // Estado: React "recuerda" lo que se escribe en el buscador entre un dibujado y otro.
-  const [busqueda, setBusqueda] = useState("");
+  const [busqueda, setBusqueda] = useState(qEnUrl);
   const [menuAbierto, setMenuAbierto] = useState(false);
 
   // useRef "apunta" a un elemento del HTML. Lo usamos para saber si un clic fue adentro o afuera del menú.
@@ -31,10 +34,23 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickAfuera);
   }, [menuAbierto]);
 
+  // Si la URL ya trae ?q= (link compartido o filtro del listado), el input lo refleja.
+  // Así, al recargar o usar "atrás", el buscador muestra el mismo texto que está en la URL.
+  useEffect(() => {
+    setBusqueda(qEnUrl);
+  }, [qEnUrl]);
+
+  // T6: el buscador no busca acá. Solo manda al listado con ?q=...
+  // Productos.tsx lee ese parámetro y llama a GET /api/productos/buscar.
   function handleBuscar(event: FormEvent) {
     event.preventDefault(); // evita que el formulario recargue la página
-    // TODO (T6): navegar al listado con la búsqueda.
-    console.log("Buscar:", busqueda);
+    const texto = busqueda.trim();
+    if (texto) {
+      navigate(`/productos?q=${encodeURIComponent(texto)}`);
+    } else {
+      // Sin texto → listado completo, sin filtro de búsqueda
+      navigate("/productos");
+    }
   }
 
   // Cierra el menú y navega. Lo usan todas las opciones del menú.
