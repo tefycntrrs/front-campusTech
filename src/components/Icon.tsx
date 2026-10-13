@@ -40,6 +40,7 @@ const paths: Record<string, ReactNode> = {
     </>
   ),
   close: <path d="M6 6l12 12M18 6 6 18" />,
+  check: <path d="m5 12 5 5 9-10" />,
   lock: (
     <>
       <rect x="5" y="11" width="14" height="10" rx="2" />

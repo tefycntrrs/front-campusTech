@@ -8,6 +8,11 @@ export function formatPrice(value: number): string {
   }).format(value);
 }
 
+// "2026-09-20T18:49:00" → "20 de septiembre de 2026"
+export function formatDate(value: string): string {
+  return new Date(value).toLocaleDateString("es-AR", { day: "numeric", month: "long", year: "numeric" });
+}
+
 // Devuelve la URL de la imagen principal del producto, o la primera si ninguna está marcada.
 // Si el producto no tiene imágenes devuelve null.
 export function getImagenPrincipal(producto: Producto): string | null {

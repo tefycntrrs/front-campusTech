@@ -2,11 +2,15 @@
 // :id lo pone React Router (ej: /productos/12 → id = "12").
 
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Icon from "../components/Icon";
+import LoginModal from "../components/LoginModal";
 import StateMessage from "../components/StateMessage";
+import { agregarItem } from "../api/carrito";
 import { getCategorias, getProducto } from "../api/catalogo";
 import { ApiError } from "../api/client";
+import { useAuth } from "../context/AuthContext";
+import { useCarrito } from "../context/CarritoContext";
 import { formatPrice } from "../utils/format";
 import type { Categoria, Producto } from "../dto/catalogo";
 
@@ -17,6 +21,9 @@ function imagenesOrdenadas(producto: Producto) {
 
 export default function ProductoDetalle() {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const { usuario } = useAuth();
+  const { recargarCarrito } = useCarrito();
   // Si el id no es un número (/productos/abc), ni llamamos al back: es "no encontrado".
   const productoId = id && /^\d+$/.test(id) ? Number(id) : null;
 
@@ -27,6 +34,10 @@ export default function ProductoDetalle() {
   const [cargando, setCargando] = useState(true);
   const [noEncontrado, setNoEncontrado] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [mostrarLogin, setMostrarLogin] = useState(false);
+  const [agregando, setAgregando] = useState(false);
+  const [errorCarrito, setErrorCarrito] = useState<string | null>(null);
+  const [confirmacion, setConfirmacion] = useState(false);
 
   // Cada vez que cambia el id de la URL (otra tarjeta, otro link) pedimos el producto de nuevo.
   useEffect(() => {
@@ -42,6 +53,8 @@ export default function ProductoDetalle() {
     setError(null);
     setProducto(null);
     setCantidad(1);
+    setErrorCarrito(null);
+    setConfirmacion(false);
 
     // El producto solo trae categoriaIds. Pedimos /categorias para mostrar los nombres.
     Promise.all([getProducto(productoId), getCategorias()])
@@ -123,6 +136,30 @@ export default function ProductoDetalle() {
     setCantidad((actual) => Math.min(stock, actual + 1));
   }
 
+  // Sin sesión se abre el modal de login y no se agrega nada.
+  async function agregarAlCarrito(irAlCarrito: boolean) {
+    if (!usuario) {
+      setMostrarLogin(true);
+      return;
+    }
+    setAgregando(true);
+    setErrorCarrito(null);
+    setConfirmacion(false);
+    try {
+      await agregarItem(usuario.id, { productoId: producto!.id, cantidad });
+      await recargarCarrito();
+      if (irAlCarrito) {
+        navigate("/carrito");
+      } else {
+        setConfirmacion(true);
+      }
+    } catch (err) {
+      setErrorCarrito(err instanceof Error ? err.message : "No pudimos agregar el producto.");
+    } finally {
+      setAgregando(false);
+    }
+  }
+
   return (
     <main className="page-shell">
       <nav className="breadcrumbs">
@@ -188,12 +225,30 @@ export default function ProductoDetalle() {
             </small>
           </div>
 
-          {/* T9: conectar estos botones al carrito y al LoginModal si no hay sesión.
-              T7 solo pide mostrarlos y deshabilitarlos cuando no hay stock. */}
-          <button className="btn btn-primary full" type="button" disabled={sinStock}>
+          {errorCarrito && (
+            <p className="mb-3 rounded-lg bg-red-50 px-3 py-2 text-xs text-danger" role="alert">
+              {errorCarrito}
+            </p>
+          )}
+          {confirmacion && (
+            <p className="mb-3 rounded-lg bg-green-50 px-3 py-2 text-xs text-success" role="status">
+              Producto agregado al carrito.
+            </p>
+          )}
+          <button
+            className="btn btn-primary full"
+            type="button"
+            disabled={sinStock || agregando}
+            onClick={() => agregarAlCarrito(false)}
+          >
             Agregar al carrito
           </button>
-          <button className="btn btn-secondary full" type="button" disabled={sinStock}>
+          <button
+            className="btn btn-secondary full"
+            type="button"
+            disabled={sinStock || agregando}
+            onClick={() => agregarAlCarrito(true)}
+          >
             Comprar ahora
           </button>
         </div>
@@ -229,6 +284,8 @@ export default function ProductoDetalle() {
           </div>
         </aside>
       </section>
+
+      {mostrarLogin && <LoginModal onClose={() => setMostrarLogin(false)} />}
     </main>
   );
 }

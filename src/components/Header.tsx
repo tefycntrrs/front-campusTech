@@ -5,10 +5,12 @@
 import { startTransition, useEffect, useRef, useState, type FormEvent } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { useCarrito } from "../context/CarritoContext";
 import Icon from "./Icon";
 
 export default function Header() {
   const { usuario, logout } = useAuth();
+  const { cantidad: cantidadCarrito } = useCarrito();
   const navigate = useNavigate();
   // useSearchParams lee la query de la URL actual (ej: /productos?q=notebook → "notebook").
   const [searchParams] = useSearchParams();
@@ -100,9 +102,9 @@ export default function Header() {
           <button className="mobile-menu" aria-label="Abrir menú">
             <Icon name="menu" />
           </button>
-          {/* El contador de productos se agrega en T8 */}
-          <Link className="cart-button" to="/carrito" aria-label="Carrito">
+          <Link className="cart-button" to="/carrito" aria-label={`Carrito (${cantidadCarrito})`}>
             <Icon name="cart" size={23} />
+            {cantidadCarrito > 0 && <span className="cart-count">{cantidadCarrito}</span>}
           </Link>
 
           {usuario ? (
