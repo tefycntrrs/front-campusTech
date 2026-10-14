@@ -41,6 +41,8 @@ export default function App() {
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/compra-exitosa" element={<CompraExitosa />} />
                 <Route path="/vender" element={<Vender />} />
+                {/* Misma pantalla, precargada para editar una publicación propia (T14) */}
+                <Route path="/vender/:id" element={<Vender />} />
                 <Route path="/cuenta/perfil" element={<Perfil />} />
                 <Route path="/cuenta/compras" element={<Compras />} />
                 <Route path="/cuenta/publicaciones" element={<Publicaciones />} />

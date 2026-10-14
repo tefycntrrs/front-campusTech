@@ -34,6 +34,32 @@ export type Categoria = {
   activo: boolean;
 };
 
+// Imagen dentro del body de crear/editar producto (ImagenProductoRequest).
+// Solo URL: el back no tiene subida de archivos.
+export type ImagenProductoRequest = {
+  url: string;
+  orden: number;
+  principal: boolean;
+};
+
+// Body de POST /api/productos (CreateProductoRequest). No lleva vendedorId: el back lo toma del token.
+// Al crear, el back exige nombre, sku, precio, stock, al menos una categoría, marca y al menos una imagen.
+export type CreateProductoRequest = {
+  nombre: string;
+  descripcion: string | null;
+  precio: number;
+  stock: number;
+  sku: string;
+  categoriaIds: number[];
+  marcaId: number;
+  imagenes: ImagenProductoRequest[];
+  activo?: boolean;
+};
+
+// Body de PUT /api/productos/{id}: es el mismo DTO en el back, pero parcial.
+// Solo se mandan los campos que cambian. Si vienen categoriaIds o imagenes, reemplazan todo.
+export type UpdateProductoRequest = Partial<CreateProductoRequest>;
+
 // Espejo de MarcaResponse. Lo usa el filtro de marca del listado.
 export type Marca = {
   marcaId: number; // el back lo llama marcaId, no id
