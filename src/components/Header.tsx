@@ -6,6 +6,7 @@ import { startTransition, useEffect, useRef, useState, type FormEvent } from "re
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useCarrito } from "../context/CarritoContext";
+import { esAdmin } from "./AdminRoute";
 import Icon from "./Icon";
 
 export default function Header() {
@@ -139,6 +140,12 @@ export default function Header() {
                   <button type="button" role="menuitem" onClick={() => irA("/vender")}>
                     Vender
                   </button>
+                  {/* T16: solo los administradores ven el acceso al ABM de categorías y marcas */}
+                  {esAdmin(usuario.roles) && (
+                    <button type="button" role="menuitem" onClick={() => irA("/admin")}>
+                      Administración
+                    </button>
+                  )}
                   <button className="logout" type="button" role="menuitem" onClick={handleLogout}>
                     Cerrar sesión
                   </button>

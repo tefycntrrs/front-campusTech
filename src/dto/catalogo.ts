@@ -66,3 +66,17 @@ export type Marca = {
   nombre: string;
   activo: boolean;
 };
+
+// Body de POST y PUT /api/categorias (CategoriaRequest). Solo ADMIN (T16).
+// Ojo: el PUT no es parcial. Pisa nombre y descripción, así que siempre se manda todo.
+export type CategoriaRequest = {
+  nombre: string; // obligatorio, máx. 100
+  descripcion: string | null; // máx. 255
+  activo: boolean;
+};
+
+// Body de POST y PUT /api/marcas (MarcaRequest). Solo ADMIN (T16).
+export type MarcaRequest = {
+  nombre: string; // obligatorio, máx. 100
+  activo: boolean;
+};

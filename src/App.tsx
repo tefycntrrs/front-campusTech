@@ -1,6 +1,7 @@
 // App: componente raíz. Define las rutas de la app, es decir, qué página se dibuja para cada URL.
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AdminRoute from "./components/AdminRoute";
 import Layout from "./components/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ScrollToTop from "./components/ScrollToTop";
@@ -16,6 +17,7 @@ import ProductoDetalle from "./pages/ProductoDetalle";
 import Productos from "./pages/Productos";
 import Registro from "./pages/Registro";
 import Vender from "./pages/Vender";
+import Admin from "./pages/admin/Admin";
 import Compras from "./pages/cuenta/Compras";
 import Perfil from "./pages/cuenta/Perfil";
 import Publicaciones from "./pages/cuenta/Publicaciones";
@@ -46,6 +48,11 @@ export default function App() {
                 <Route path="/cuenta/perfil" element={<Perfil />} />
                 <Route path="/cuenta/compras" element={<Compras />} />
                 <Route path="/cuenta/publicaciones" element={<Publicaciones />} />
+
+                {/* Solo ADMIN: además de la sesión, AdminRoute revisa el rol */}
+                <Route element={<AdminRoute />}>
+                  <Route path="/admin" element={<Admin />} />
+                </Route>
               </Route>
 
               {/* "*" atrapa cualquier URL que no coincida con las de arriba */}
