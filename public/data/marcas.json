@@ -1,0 +1,77 @@
+[
+  {
+    "marcaId": 1,
+    "nombre": "Apple",
+    "activo": true
+  },
+  {
+    "marcaId": 2,
+    "nombre": "Samsung",
+    "activo": true
+  },
+  {
+    "marcaId": 3,
+    "nombre": "Motorola",
+    "activo": true
+  },
+  {
+    "marcaId": 4,
+    "nombre": "Xiaomi",
+    "activo": true
+  },
+  {
+    "marcaId": 5,
+    "nombre": "Lenovo",
+    "activo": true
+  },
+  {
+    "marcaId": 6,
+    "nombre": "HP",
+    "activo": true
+  },
+  {
+    "marcaId": 7,
+    "nombre": "Dell",
+    "activo": true
+  },
+  {
+    "marcaId": 8,
+    "nombre": "Asus",
+    "activo": true
+  },
+  {
+    "marcaId": 9,
+    "nombre": "Acer",
+    "activo": true
+  },
+  {
+    "marcaId": 10,
+    "nombre": "Logitech",
+    "activo": true
+  },
+  {
+    "marcaId": 11,
+    "nombre": "Razer",
+    "activo": true
+  },
+  {
+    "marcaId": 12,
+    "nombre": "Sony",
+    "activo": true
+  },
+  {
+    "marcaId": 13,
+    "nombre": "JBL",
+    "activo": true
+  },
+  {
+    "marcaId": 14,
+    "nombre": "Kingston",
+    "activo": true
+  },
+  {
+    "marcaId": 15,
+    "nombre": "Otra",
+    "activo": true
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "categoriaId": 1,
+    "nombre": "Notebooks",
+    "descripcion": "Notebooks y laptops",
+    "activo": true
+  },
+  {
+    "categoriaId": 2,
+    "nombre": "Celulares",
+    "descripcion": "Celulares y smartphones",
+    "activo": true
+  },
+  {
+    "categoriaId": 3,
+    "nombre": "Periféricos",
+    "descripcion": "Teclados, mouses, monitores y más",
+    "activo": true
+  },
+  {
+    "categoriaId": 4,
+    "nombre": "Componentes",
+    "descripcion": "Placas, procesadores, memorias y almacenamiento",
+    "activo": true
+  },
+  {
+    "categoriaId": 5,
+    "nombre": "Audio",
+    "descripcion": "Auriculares, parlantes y micrófonos",
+    "activo": true
+  },
+  {
+    "categoriaId": 6,
+    "nombre": "Gaming",
+    "descripcion": "Consolas, joysticks y accesorios para jugar",
+    "activo": true
+  },
+  {
+    "categoriaId": 7,
+    "nombre": "Accesorios",
+    "descripcion": "Cables, cargadores, fundas y otros accesorios",
+    "activo": true
+  }
+]

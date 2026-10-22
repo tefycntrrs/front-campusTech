@@ -1,0 +1,324 @@
+[
+  {
+    "id": 1,
+    "nombre": "Notebook Lenovo IdeaPad 3 15″",
+    "descripcion": "Notebook 15.6″, Ryzen 5, 8 GB RAM, SSD 256 GB.",
+    "precio": 749999,
+    "stock": 12,
+    "sku": "LEN-IP3-15",
+    "activo": true,
+    "categoriaIds": [
+      1
+    ],
+    "marcaId": 5,
+    "marcaNombre": "Lenovo",
+    "vendedorId": 1,
+    "vendedorUsername": "ana",
+    "imagenes": [
+      {
+        "id": 11,
+        "url": "https://placehold.co/600x400?text=Producto+1",
+        "orden": 0,
+        "principal": true
+      },
+      {
+        "id": 12,
+        "url": "https://placehold.co/600x400?text=Producto+1+B",
+        "orden": 1,
+        "principal": false
+      }
+    ],
+    "createdAt": "2026-10-01T10:00:00",
+    "updatedAt": "2026-10-01T10:00:00"
+  },
+  {
+    "id": 2,
+    "nombre": "Notebook Asus Vivobook 14",
+    "descripcion": "Notebook 14″, Intel Core i5, 16 GB RAM, SSD 512 GB.",
+    "precio": 899999,
+    "stock": 7,
+    "sku": "ASU-VB-14",
+    "activo": true,
+    "categoriaIds": [
+      1
+    ],
+    "marcaId": 8,
+    "marcaNombre": "Asus",
+    "vendedorId": 1,
+    "vendedorUsername": "ana",
+    "imagenes": [
+      {
+        "id": 21,
+        "url": "https://placehold.co/600x400?text=Producto+2",
+        "orden": 0,
+        "principal": true
+      },
+      {
+        "id": 22,
+        "url": "https://placehold.co/600x400?text=Producto+2+B",
+        "orden": 1,
+        "principal": false
+      }
+    ],
+    "createdAt": "2026-10-01T10:00:00",
+    "updatedAt": "2026-10-01T10:00:00"
+  },
+  {
+    "id": 3,
+    "nombre": "iPhone 14 Pro Max 256 GB",
+    "descripcion": "iPhone 14 Pro Max sellado, 256 GB, color violeta.",
+    "precio": 1899999,
+    "stock": 3,
+    "sku": "IPH-14-PRO",
+    "activo": true,
+    "categoriaIds": [
+      2
+    ],
+    "marcaId": 1,
+    "marcaNombre": "Apple",
+    "vendedorId": 1,
+    "vendedorUsername": "ana",
+    "imagenes": [
+      {
+        "id": 31,
+        "url": "https://placehold.co/600x400?text=Producto+3",
+        "orden": 0,
+        "principal": true
+      },
+      {
+        "id": 32,
+        "url": "https://placehold.co/600x400?text=Producto+3+B",
+        "orden": 1,
+        "principal": false
+      }
+    ],
+    "createdAt": "2026-10-01T10:00:00",
+    "updatedAt": "2026-10-01T10:00:00"
+  },
+  {
+    "id": 4,
+    "nombre": "Samsung Galaxy S23 128 GB",
+    "descripcion": "Celular Samsung Galaxy S23, 128 GB, pantalla AMOLED.",
+    "precio": 999999,
+    "stock": 9,
+    "sku": "SAM-S23-128",
+    "activo": true,
+    "categoriaIds": [
+      2
+    ],
+    "marcaId": 2,
+    "marcaNombre": "Samsung",
+    "vendedorId": 1,
+    "vendedorUsername": "ana",
+    "imagenes": [
+      {
+        "id": 41,
+        "url": "https://placehold.co/600x400?text=Producto+4",
+        "orden": 0,
+        "principal": true
+      },
+      {
+        "id": 42,
+        "url": "https://placehold.co/600x400?text=Producto+4+B",
+        "orden": 1,
+        "principal": false
+      }
+    ],
+    "createdAt": "2026-10-01T10:00:00",
+    "updatedAt": "2026-10-01T10:00:00"
+  },
+  {
+    "id": 5,
+    "nombre": "Mouse Logitech G203",
+    "descripcion": "Mouse gamer con 6 botones y sensor de 8000 DPI.",
+    "precio": 29999,
+    "stock": 40,
+    "sku": "LOG-G203",
+    "activo": true,
+    "categoriaIds": [
+      3,
+      6
+    ],
+    "marcaId": 10,
+    "marcaNombre": "Logitech",
+    "vendedorId": 1,
+    "vendedorUsername": "ana",
+    "imagenes": [
+      {
+        "id": 51,
+        "url": "https://placehold.co/600x400?text=Producto+5",
+        "orden": 0,
+        "principal": true
+      },
+      {
+        "id": 52,
+        "url": "https://placehold.co/600x400?text=Producto+5+B",
+        "orden": 1,
+        "principal": false
+      }
+    ],
+    "createdAt": "2026-10-01T10:00:00",
+    "updatedAt": "2026-10-01T10:00:00"
+  },
+  {
+    "id": 6,
+    "nombre": "Teclado mecánico Razer BlackWidow",
+    "descripcion": "Teclado mecánico retroiluminado, switches verdes.",
+    "precio": 159999,
+    "stock": 15,
+    "sku": "RAZ-BW-V3",
+    "activo": true,
+    "categoriaIds": [
+      3,
+      6
+    ],
+    "marcaId": 11,
+    "marcaNombre": "Razer",
+    "vendedorId": 1,
+    "vendedorUsername": "ana",
+    "imagenes": [
+      {
+        "id": 61,
+        "url": "https://placehold.co/600x400?text=Producto+6",
+        "orden": 0,
+        "principal": true
+      },
+      {
+        "id": 62,
+        "url": "https://placehold.co/600x400?text=Producto+6+B",
+        "orden": 1,
+        "principal": false
+      }
+    ],
+    "createdAt": "2026-10-01T10:00:00",
+    "updatedAt": "2026-10-01T10:00:00"
+  },
+  {
+    "id": 7,
+    "nombre": "Auriculares Sony WH-1000XM5",
+    "descripcion": "Auriculares inalámbricos con cancelación de ruido.",
+    "precio": 449999,
+    "stock": 6,
+    "sku": "SON-XM5",
+    "activo": true,
+    "categoriaIds": [
+      5
+    ],
+    "marcaId": 12,
+    "marcaNombre": "Sony",
+    "vendedorId": 1,
+    "vendedorUsername": "ana",
+    "imagenes": [
+      {
+        "id": 71,
+        "url": "https://placehold.co/600x400?text=Producto+7",
+        "orden": 0,
+        "principal": true
+      },
+      {
+        "id": 72,
+        "url": "https://placehold.co/600x400?text=Producto+7+B",
+        "orden": 1,
+        "principal": false
+      }
+    ],
+    "createdAt": "2026-10-01T10:00:00",
+    "updatedAt": "2026-10-01T10:00:00"
+  },
+  {
+    "id": 8,
+    "nombre": "Parlante JBL Flip 6",
+    "descripcion": "Parlante Bluetooth portátil resistente al agua.",
+    "precio": 139999,
+    "stock": 20,
+    "sku": "JBL-FLIP6",
+    "activo": true,
+    "categoriaIds": [
+      5
+    ],
+    "marcaId": 13,
+    "marcaNombre": "JBL",
+    "vendedorId": 1,
+    "vendedorUsername": "ana",
+    "imagenes": [
+      {
+        "id": 81,
+        "url": "https://placehold.co/600x400?text=Producto+8",
+        "orden": 0,
+        "principal": true
+      },
+      {
+        "id": 82,
+        "url": "https://placehold.co/600x400?text=Producto+8+B",
+        "orden": 1,
+        "principal": false
+      }
+    ],
+    "createdAt": "2026-10-01T10:00:00",
+    "updatedAt": "2026-10-01T10:00:00"
+  },
+  {
+    "id": 9,
+    "nombre": "Memoria SSD Kingston 1 TB",
+    "descripcion": "SSD NVMe M.2 de 1 TB, lectura hasta 3500 MB/s.",
+    "precio": 89999,
+    "stock": 25,
+    "sku": "KIN-NV2-1T",
+    "activo": true,
+    "categoriaIds": [
+      4
+    ],
+    "marcaId": 14,
+    "marcaNombre": "Kingston",
+    "vendedorId": 1,
+    "vendedorUsername": "ana",
+    "imagenes": [
+      {
+        "id": 91,
+        "url": "https://placehold.co/600x400?text=Producto+9",
+        "orden": 0,
+        "principal": true
+      },
+      {
+        "id": 92,
+        "url": "https://placehold.co/600x400?text=Producto+9+B",
+        "orden": 1,
+        "principal": false
+      }
+    ],
+    "createdAt": "2026-10-01T10:00:00",
+    "updatedAt": "2026-10-01T10:00:00"
+  },
+  {
+    "id": 10,
+    "nombre": "Cargador rápido 65 W USB-C",
+    "descripcion": "Cargador USB-C de 65 W para notebooks y celulares.",
+    "precio": 24999,
+    "stock": 50,
+    "sku": "ACC-CH-65W",
+    "activo": true,
+    "categoriaIds": [
+      7
+    ],
+    "marcaId": 15,
+    "marcaNombre": "Otra",
+    "vendedorId": 1,
+    "vendedorUsername": "ana",
+    "imagenes": [
+      {
+        "id": 101,
+        "url": "https://placehold.co/600x400?text=Producto+10",
+        "orden": 0,
+        "principal": true
+      },
+      {
+        "id": 102,
+        "url": "https://placehold.co/600x400?text=Producto+10+B",
+        "orden": 1,
+        "principal": false
+      }
+    ],
+    "createdAt": "2026-10-01T10:00:00",
+    "updatedAt": "2026-10-01T10:00:00"
+  }
+]

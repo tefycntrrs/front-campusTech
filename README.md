@@ -31,4 +31,5 @@ src/
 ## Colores de marca (utilidades Tailwind)
 `bg-primary` `bg-navy` `bg-blue-light` `bg-blue-pale` `text-muted` `text-ink` `text-success` `text-danger`
 
-Plan de trabajo en [TAREAS.md](./TAREAS.md).
+## tener en cuenta en esta 3era entrega 
+“Para usar JSON locales el modo mock debe estar: VITE_USE_MOCK=true y para back solo se cambia a false”
